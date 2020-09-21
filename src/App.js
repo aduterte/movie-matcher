@@ -2,24 +2,27 @@ import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useRecoilState } from "recoil"
-import { userAtom} from "./Atom"
+import { userAtom, moviesAtom} from "./Atom"
+import Login from "./components/Login"
 
 function App() {
 
-  const [user, setUser] = useRecoilState(userAtom)
+  const [user, setUser] = useRecoilState(userAtom),
+    [movies, setMovies] = useRecoilState(moviesAtom)
 
 
   useEffect(()=>{
-    fetch("http://localhost:3000/users/1")
+    fetch("http://localhost:3000/movies")
       .then(resp => resp.json())
-      .then(data => setUser(data))
-
-   
+      .then(data => {
+        console.log(data)
+        setMovies(data)})
   }, [])
+
   return (
     <div className="App">
-      {user.username}
-      {user.email}
+      <Login/>
+      {movies.map(movie => <div key={movie.id}>{movie.title}</div>)}
     </div>
   );
 }
