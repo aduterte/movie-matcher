@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useRecoilState } from "recoil"
 import { userAtom, moviesAtom} from "./Atom"
 import Login from "./components/Login"
+import MovieContainer from "./containers/MovieContainer"
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Login/>
-      {movies.map(movie => <div key={movie.id}>{movie.title}</div>)}
+      <MovieContainer/>
     </div>
   );
 }
