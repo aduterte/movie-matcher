@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil"
 import { userAtom, moviesAtom} from "./Atom"
 import Login from "./components/Login"
 import MovieContainer from "./containers/MovieContainer"
+import Nav from "./containers/Nav"
 
 function App() {
 
@@ -21,8 +22,12 @@ function App() {
 
   return (
     <div className="App">
-      <Login/>
-      <MovieContainer/>
+      <div className="main-section">
+        {/* <Login/> */}
+        <MovieContainer/>
+      </div>
+      
+      <Nav/>
     </div>
   );
 }
