@@ -2,6 +2,7 @@ import React from "react"
 import { moviesAtom} from "../Atom"
 import { useRecoilState } from "recoil"
 import MovieCard from "../components/MovieCard"
+import HeroMovie from "../components/HeroMovie"
 
 export default function MovieContainer(){
 
@@ -9,6 +10,7 @@ export default function MovieContainer(){
 
     return (
         <div>
+            <HeroMovie movie={movies[0]}/>
             {movies.map(movie => <MovieCard key={movie.id} movie={movie}/>)}
         </div>
     )

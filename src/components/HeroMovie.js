@@ -6,7 +6,7 @@ export default function HeroMovie(props){
         <div>
             <div className="hero-movie">
                 
-
+            {props.movie.title}
             </div>
         </div>
     )
