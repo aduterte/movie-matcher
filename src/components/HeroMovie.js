@@ -2,11 +2,16 @@ import React from "react"
 
 export default function HeroMovie(props){
 
+        const movie = props.movie
     return (
         <div>
-            {props.movie && <div className="hero-movie">
+            {movie && 
+            <div className="hero-movie" style={{background: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
                 
-            {props.movie.title}
+            <img className="hero-test" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
+                
+                    
+                
             </div>}
         </div>
     )
