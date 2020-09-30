@@ -5,6 +5,7 @@ import { userAtom, moviesAtom} from "./Atom"
 import Login from "./components/Login"
 import MovieContainer from "./containers/MovieContainer"
 import Nav from "./containers/Nav"
+import URL from "./Constants"
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:3000/movies")
+    fetch(`${URL}/movies`)
       .then(resp => resp.json())
       .then(data => {
         console.log(data)
