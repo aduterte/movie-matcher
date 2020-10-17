@@ -8,7 +8,7 @@ export default function HeroMovie(props){
             {movie && 
             <div className="hero-movie" style={{background: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
                 
-            <img className="hero-test" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
+            <img className="hero-test" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}/>
                 
                     
                 
